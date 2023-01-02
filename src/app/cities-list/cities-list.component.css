@@ -1,0 +1,25 @@
+#home{
+    float: left;
+ }
+ #nav{
+    padding-top: 10px;
+ }
+
+.table tr{
+   text-align: center;
+}
+.table-responsive a {
+   color: black;
+   text-decoration: none;
+}
+.card{
+   position: absolute;
+   top: 170px;
+   right: 0px;
+   bottom: 0px;
+   left: 0px;
+   --bs-card-cap-padding-y: 0px
+}
+.card-header{
+   padding-left: 50px;
+}

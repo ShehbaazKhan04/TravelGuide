@@ -1,0 +1,15 @@
+img{
+    width: 500px;
+    height: 500px;
+}
+.card{
+    position: absolute;
+    top: 170px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    --bs-card-cap-padding-y: 0px
+}
+.card-header{
+    padding-left: 50px;
+}
