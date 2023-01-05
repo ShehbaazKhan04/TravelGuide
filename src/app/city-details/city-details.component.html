@@ -28,6 +28,9 @@
                         <div class='col-md-2'>
                             <h6>{{city.cityName}}</h6>
                         </div>
+                        <div class='col-md-4'>
+                            <button class="btn btn-primary" style="float: left;">Add Point Of Interst</button>
+                        </div>
                     </div>
                     <div class='row'>
                         <div class='col-md-2'>
@@ -68,7 +71,7 @@
                                                     0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 
                                                     0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                             </svg></button></span>
-                                    <span><button class="btn btn-light mr-1" (click)="deleteClick(content)">
+                                    <span><button class="btn btn-light mr-1" (click)="deleteClick(city.cityId, point.pointOfInterestId)">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
                                                 <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 

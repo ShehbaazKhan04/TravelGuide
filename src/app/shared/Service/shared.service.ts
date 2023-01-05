@@ -42,14 +42,13 @@ export class SharedService {
   }
 
   updatePointOfInterest(val: any, cityId:number, pointOfInterestId:number) {
-    var updateUrl = this.APIUrl + `/cities/${cityId}/pointsofinterest/` + pointOfInterestId
-    return this.http.put(updateUrl , val).pipe(
+    return this.http.put(this.APIUrl + `/cities/${cityId}/pointsofinterest/` + pointOfInterestId , val).pipe(
       tap(data => console.log('All', JSON.stringify(data))),
       catchError(this.handleError));
   }
 
-  deleteCity(val: any) {
-    return this.http.delete(this.APIUrl + '/cities/', val)
+  removePointOfInterest(cityId:number, pointOfInterestId:number) {
+    return this.http.delete(this.APIUrl + `/cities/${cityId}/pointsofinterest/` + pointOfInterestId)
   }
 
   private handleError(err: HttpErrorResponse) {

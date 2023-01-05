@@ -12,7 +12,6 @@ import { StarRatingComponent } from './shared/star-rating/star-rating.component'
 import { SharedService } from './shared/Service/shared.service';
 import { EditPointofinterestComponent } from './city-details/edit-pointofinterest/edit-pointofinterest.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DeletePointofinterestComponent } from './city-details/delete-pointofinterest/delete-pointofinterest.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { DeletePointofinterestComponent } from './city-details/delete-pointofint
     StarRatingComponent,
     CityDetailsComponent,
     EditPointofinterestComponent,
-    DeletePointofinterestComponent,
   ],
   imports: [
     BrowserModule,

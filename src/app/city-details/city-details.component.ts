@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { firstValueFrom } from 'rxjs';
 import { ICityDetail } from '../shared/Interface/citydetail';
 import { IPointOfInterest } from '../shared/Interface/pointofinterestdetails';
 import { SharedService } from '../shared/Service/shared.service';
@@ -39,7 +40,7 @@ export class CityDetailsComponent implements OnInit {
     this.service.getCitiesById(id).subscribe(data => {
       this.city = data;
     })
-  } 
+  }
 
   editClick(cityId: number, pointOfInterestId: number, content: any): void {
     this.service.getPointOfInterstById(cityId, pointOfInterestId).subscribe(data => {
@@ -51,9 +52,11 @@ export class CityDetailsComponent implements OnInit {
 
   }
 
-  deleteClick(content: any): void {
-    this.modalService.open(content);
-    this.ModalTitle = 'Delete Point of Interest';
+  async deleteClick(cityId: number, pointOfInterestId: number) {
+    if (confirm("Are you sure you wan to delete this Point Of Interest ?")) {
+      await firstValueFrom(this.service.removePointOfInterest(cityId, pointOfInterestId));
+    }
+    this.cityUpdated(true);
   }
 
   closeClick(): void {
